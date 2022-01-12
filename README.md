@@ -26,7 +26,7 @@ Additional description about the project and its features.
 Clone the project
 
 ```bash
-git clone https://github.com/rotimiazeez/to-do-list.git
+git clone https://github.com/oyelakinG9/todoList.git
 ```
 
 - Install Dependencies
