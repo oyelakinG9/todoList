@@ -18,17 +18,40 @@ Additional description about the project and its features.
 
 [Live Demo Link](https://livedemo.com)
 
-### Prerequisites: Set up webpack
+### Prerequisites: 
+- webpack setup
+- linters correction 
 
-### Setup: Vs Code 
+### Deployment:
+Clone the project
 
-### Install: Webpack
+```bash
+git clone https://github.com/rotimiazeez/to-do-list.git
+```
 
-### Usage: Webpack 
+- Install Dependencies
 
-### Run tests: Eslint, npm
+```bash
+npm install
+```
 
-### Deployment: Mode
+To run StyleLint by itself, you may run the lint task:
+
+```bash
+npx stylelint "**/*.{css,scss}"
+```
+
+Or to automatically fix issues found (where possible):
+
+```bash
+npx stylelint "**/*.{css,scss}" --fix
+```
+
+You can also check against Webhint:
+
+```bash
+npx hint --telemetry=off .
+```
 
 
 
