@@ -2,7 +2,7 @@ const Tasks = [
   {
     description: 'Do the list',
     completion: false,
-    index: 0,
+    index: 0
   },
   {
     description: 'Study hard before the class',
@@ -12,8 +12,8 @@ const Tasks = [
   {
     description: 'Do the project',
     completion: false,
-    index: 2,
-  },
+    index: 2
+  }
 ];
 
 const workList = document.querySelector('.todoList');
