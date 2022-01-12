@@ -52,7 +52,7 @@ You can also check against Webhint:
 ```bash
 npx hint --telemetry=off .
 ```
-
+-- Start running npm run build and follow npm run start
 
 
 ## Authors
