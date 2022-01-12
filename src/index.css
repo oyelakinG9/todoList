@@ -72,14 +72,14 @@ header {
   pointer-events: auto;
 }
 
-.container .todoList {
-  max-height: 250px;
-  overflow-y: auto;
-}
-
 .todoList {
   display: flex;
   flex-direction: column;
+}
+
+.container .todoList {
+  max-height: 250px;
+  overflow-y: auto;
 }
 
 .todoList li {
@@ -99,8 +99,8 @@ header {
   text-align: center;
   color: #333;
   cursor: pointer;
-  transition: all 0.3 ease;
 }
+
 .todoList li:hover span {
   right: 0;
 }
