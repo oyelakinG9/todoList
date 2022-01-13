@@ -1,32 +1,36 @@
 /* eslint-disable import/no-cycle */
-import descriptionOnFocus from './inputsFocus.js';
+import descriptionOnFocus from "./inputsFocus.js";
 import {
-  onMouseOver, onMouseOut, onDragStart, onDragEnd, onDragOver,
-} from './dragOverAndDrop.js';
+  onMouseOver,
+  onMouseOut,
+  onDragStart,
+  onDragEnd,
+  onDragOver,
+} from "./dragOverAndDrop.js";
 import {
   addNewItem, clearAll, updateInput, removeItem,
-} from './addRemove.js';
-import './index.css';
+} from "./addRemove.js";
+import "./index.css";
 
 // SET TODO ARR
 let toDoArr = [];
 export const setToDoArr = () => {
-  if (JSON.parse(localStorage.getItem('myToDos'))) {
-    toDoArr = JSON.parse(localStorage.getItem('myToDos'));
+  if (JSON.parse(localStorage.getItem("myToDos"))) {
+    toDoArr = JSON.parse(localStorage.getItem("myToDos"));
   } else {
     toDoArr = [];
   }
 };
 setToDoArr();
-const listWrap = document.querySelector('.todo-list-wrap');
+const listWrap = document.querySelector(".todo-list-wrap");
 // IMPLEMENT TO DO ITEMS TO SCREEN
 export const implementToDoItems = (arr) => {
   arr.forEach((item) => {
-    let isCompleted = '';
-    let completedClass = '';
+    let isCompleted = "";
+    let completedClass = "";
     if (item.completed) {
-      isCompleted = 'checked';
-      completedClass = 'completed-item';
+      isCompleted = "checked";
+      completedClass = "completed-item";
     }
     listWrap.innerHTML += `<li class="list-item ${completedClass}" data-key="${item.index}" draggable="true">
       <div class="list-item-check-name">
@@ -38,29 +42,31 @@ export const implementToDoItems = (arr) => {
     </li>`;
   });
 };
-implementToDoItems(toDoArr);
+ implementToDoItems(toDoArr);
 
 // FOCUS ITEMS
-const toDoDescriptionsInputs = [...document.querySelectorAll('.list-item .description-input')];
-toDoDescriptionsInputs.forEach((item) => item.addEventListener('focusin', (event) => descriptionOnFocus(event, item)));
-toDoDescriptionsInputs.forEach((item) => item.addEventListener('focusout', (event) => descriptionOnFocus(event, item)));
+const toDoDescriptionsInputs = [
+  ...document.querySelectorAll(".list-item .description-input"),
+];
+toDoDescriptionsInputs.forEach((item) => item.addEventListener("focusin", (event) => descriptionOnFocus(event, item)));
+toDoDescriptionsInputs.forEach((item) => item.addEventListener("focusout", (event) => descriptionOnFocus(event, item)));
 // DRAG AND DROP FUNCTIONS
-const toDoItems = [...document.querySelectorAll('.list-item')];
+const toDoItems = [...document.querySelectorAll(".list-item")];
 toDoItems.forEach((item) => {
-  item.addEventListener('mouseover', (event) => onMouseOver(event, item));
-  item.addEventListener('mouseout', (event) => onMouseOut(event, item));
-  item.addEventListener('dragstart', (event) => onDragStart(event, item));
-  item.addEventListener('drop', (event) => onDragEnd(event, item, toDoItems, listWrap));
+  item.addEventListener("mouseover", (event) => onMouseOver(event, item));
+  item.addEventListener("mouseout", (event) => onMouseOut(event, item));
+  item.addEventListener("dragstart", (event) => onDragStart(event, item));
+  item.addEventListener("drop", (event) => onDragEnd(event, item, toDoItems, listWrap));
 });
-listWrap.addEventListener('dragover', (event) => onDragOver(event, listWrap));
+listWrap.addEventListener("dragover", (event) => onDragOver(event, listWrap));
 // ADD ITEM
-const addNewButton = document.querySelector('.add-new-btn');
-addNewButton.addEventListener('click', (event) => addNewItem(event, toDoArr, toDoItems, listWrap));
+const addNewButton = document.querySelector(".add-new-btn");
+addNewButton.addEventListener("click", (event) => addNewItem(event, toDoArr, toDoItems, listWrap));
 // CLEAR ALL
-const clearAllBtn = document.querySelector('.clear-all');
-clearAllBtn.addEventListener('click', () => clearAll(listWrap));
+const clearAllBtn = document.querySelector(".clear-all");
+clearAllBtn.addEventListener("click", () => clearAll(listWrap));
 // UPDATE ITEMS
-toDoDescriptionsInputs.forEach((item) => item.addEventListener('input', () => updateInput(item)));
+toDoDescriptionsInputs.forEach((item) => item.addEventListener("input", () => updateInput(item)));
 // REMOVE ITEM
-const removeBtns = document.querySelectorAll('.remove-item');
-removeBtns.forEach((item) => item.addEventListener('click', () => removeItem(item, toDoArr, listWrap)));
+const removeBtns = document.querySelectorAll(".remove-item");
+removeBtns.forEach((item) => item.addEventListener("click", () => removeItem(item, toDoArr, listWrap)));
