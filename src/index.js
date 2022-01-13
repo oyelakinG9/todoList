@@ -39,8 +39,7 @@ export const implementToDoItems = (arr) => {
   });
 };
 implementToDoItems(toDoArr);
-// CHECK ITEMS
-const toDoChecksInputs = [...document.querySelectorAll('.list-item .check-item')];
+
 // FOCUS ITEMS
 const toDoDescriptionsInputs = [...document.querySelectorAll('.list-item .description-input')];
 toDoDescriptionsInputs.forEach((item) => item.addEventListener('focusin', (event) => descriptionOnFocus(event, item)));
