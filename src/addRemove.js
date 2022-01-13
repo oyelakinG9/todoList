@@ -1,14 +1,14 @@
 /* eslint-disable import/no-cycle */
-import { implementToDoItems, setToDoArr } from "./index.js";
+import { implementToDoItems, setToDoArr } from './index.js';
 import {
   onMouseOver,
   onMouseOut,
   onDragStart,
   onDragEnd,
-} from "./dragOverAndDrop.js";
-import descriptionOnFocus from "./inputsFocus.js";
+} from './dragOverAndDrop.js';
+import descriptionOnFocus from './inputsFocus.js';
 
-const listWrap = document.querySelector(".todo-list-wrap");
+const listWrap = document.querySelector('.todo-list-wrap');
 const addNewInput = document.querySelector(".add-new-input");
 // UPDATE ITEM
 export const updateInput = (item) => {
@@ -172,14 +172,14 @@ export const clearAll = (container) => {
     );
   });
 
-  const removeBtns = document.querySelectorAll(".remove-item");
+  const removeBtns = document.querySelectorAll('.remove-item');
   removeBtns.forEach((item) =>
-    item.addEventListener("click", () => removeItem(item, arr, container))
+    item.addEventListener('click', () => removeItem(item, arr, container))
   );
   const toDoChecksInputs = [
-    ...document.querySelectorAll(".list-item .check-item"),
+    ...document.querySelectorAll('.list-item .check-item'),
   ];
   toDoChecksInputs.forEach((item) =>
-    item.addEventListener("change", () => checkItem(item))
+    item.addEventListener('change', () => checkItem(item))
   );
 };

@@ -125,11 +125,7 @@ body {
   font-family: "Open Sans", sans-serif !important;
 }
 
-.todo-list
-  .todo-list-wrap
-  .list-item
-  .list-item-check-name
-  .description-input:focus-visible {
+.todo-list .todo-list-wrap .list-item .list-item-check-name .description-input:focus-visible {
   border: none;
   outline: none;
 }

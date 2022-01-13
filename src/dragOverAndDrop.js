@@ -1,12 +1,12 @@
 /* eslint-disable import/no-cycle */
-import { implementToDoItems, setToDoArr } from "./index.js";
-import { removeItem, updateInput } from "./addRemove.js";
-import descriptionOnFocus from "./inputsFocus.js";
+import { implementToDoItems, setToDoArr } from './index.js';
+import { removeItem, updateInput } from './addRemove.js';
+import descriptionOnFocus from './inputsFocus.js';
 
-const listWrap = document.querySelector(".todo-list-wrap");
+const listWrap = document.querySelector('.todo-list-wrap');
 export const onMouseOver = (event, item) => {
   [...item.childNodes][3].innerHTML = '<i class="fas fa-arrows-alt"></i>';
-  [...item.childNodes][3].style.color = "#545862";
+  [...item.childNodes][3].style.color = '#545862';
 };
 export const onMouseOut = (event, item) => {
   [...item.childNodes][3].innerHTML = '<i class="fas fa-ellipsis-v"></i>';
@@ -14,7 +14,7 @@ export const onMouseOut = (event, item) => {
 };
 export const dragAfterElement = (container, y) => {
   const draggableElements = [
-    ...container.querySelectorAll(".list-item:not(.active)"),
+    ...container.querySelectorAll('.list-item:not(.active)'),
   ];
   return draggableElements.reduce(
     (closes, child) => {
@@ -29,18 +29,18 @@ export const dragAfterElement = (container, y) => {
   ).element;
 };
 export const onDragStart = (event, item) => {
-  item.style.backgroundColor = "#fffeca";
+  item.style.backgroundColor = '#fffeca';
   item.classList.add("active");
 };
 export const onDragEnd = (event, item, arr, container) => {
-  item.style.backgroundColor = "#fff";
-  item.classList.remove("active");
+  item.style.backgroundColor = '#fff';
+  item.classList.remove('active');
   const newArr = [];
-  arr = [...document.querySelectorAll(".list-item")];
+  arr = [...document.querySelectorAll('.list-item')];
   arr.forEach((item2, i) => {
-    const description = item2.querySelector(".description-input").value;
+    const description = item2.querySelector('.description-input').value;
     let completed = true;
-    if (item2.classList.contains("completed-item")) {
+    if (item2.classList.contains('completed-item')) {
       completed = true;
     } else {
       completed = false;
@@ -49,41 +49,41 @@ export const onDragEnd = (event, item, arr, container) => {
     newArr.push({ description, completed, index });
   });
   container.innerHTML = "";
-  localStorage.setItem("myToDos", JSON.stringify(newArr));
+  localStorage.setItem('myToDos', JSON.stringify(newArr));
   setToDoArr(newArr);
   implementToDoItems(newArr);
   const toDoDescriptionsInputs = [
-    ...document.querySelectorAll(".list-item .description-input"),
+    ...document.querySelectorAll('.list-item .description-input'),
   ];
   toDoDescriptionsInputs.forEach((item) =>
-    item.addEventListener("focusin", (event) => descriptionOnFocus(event, item))
+    item.addEventListener('focusin', (event) => descriptionOnFocus(event, item))
   );
   toDoDescriptionsInputs.forEach((item) =>
-    item.addEventListener("focusout", (event) =>
+    item.addEventListener('focusout', (event) =>
       descriptionOnFocus(event, item)
     )
   );
   toDoDescriptionsInputs.forEach((item) =>
-    item.addEventListener("input", () => updateInput(item))
+    item.addEventListener('input', () => updateInput(item))
   );
-  arr = [...document.querySelectorAll(".list-item")];
+  arr = [...document.querySelectorAll('.list-item')];
   arr.forEach((item) => {
-    item.addEventListener("mouseover", (event) => onMouseOver(event, item));
-    item.addEventListener("mouseout", (event) => onMouseOut(event, item));
-    item.addEventListener("dragstart", (event) => onDragStart(event, item));
-    item.addEventListener("drop", (event) =>
+    item.addEventListener('mouseover', (event) => onMouseOver(event, item));
+    item.addEventListener('mouseout', (event) => onMouseOut(event, item));
+    item.addEventListener('dragstart', (event) => onDragStart(event, item));
+    item.addEventListener('drop', (event) =>
       onDragEnd(event, item, arr, listWrap)
     );
   });
-  const removeBtns = document.querySelectorAll(".remove-item");
+  const removeBtns = document.querySelectorAll('.remove-item');
   removeBtns.forEach((item) =>
-    item.addEventListener("click", () => removeItem(item, arr, container))
+    item.addEventListener('click', () => removeItem(item, arr, container))
   );
   const toDoChecksInputs = [
-    ...document.querySelectorAll(".list-item .check-item"),
+    ...document.querySelectorAll('.list-item .check-item'),
   ];
   toDoChecksInputs.forEach((item) =>
-    item.addEventListener("change", () => checkItem(item))
+    item.addEventListener('change', () => checkItem(item))
   );
 };
 // eslint-disable-next-line no-unused-vars
