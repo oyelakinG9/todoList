@@ -15,7 +15,6 @@
     "no-param-reassign": "off",
     "eol-last": "off",
     "quotes": "off",
-    "trailingComma" : "none",
     "import/extensions": [ 1, {
       "js": "always", "json": "always"
     }]
