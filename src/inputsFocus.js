@@ -8,10 +8,10 @@ const descriptionOnFocus = (event, item) => {
     item.parentElement.parentElement.classList.remove("uncompleted-item");
     item.parentElement.parentElement.style.backgroundColor = "#fff";
     setTimeout(() => {
-      [...item.parentElement.parentElement.childNodes][5].style.display =
-        "none";
-      item.parentElement.nextElementSibling.style.display = "flex";
+    [...item.parentElement.parentElement.childNodes][5].style.display = "none";
+    item.parentElement.nextElementSibling.style.display = "flex";
     }, 1000);
   }
 };
+
 export default descriptionOnFocus;
