@@ -47,11 +47,11 @@ export const removeItem = (item, arr, container) => {
   });
   const removeBtns = document.querySelectorAll(".remove-item");
   removeBtns.forEach((item) => item.addEventListener("click", () => removeItem(item, arr, container)));
-  const toDoChecksInputs = [...document.querySelectorAll(".list-item .check-item") ];
-  toDoChecksInputs.forEach((item) => item.addEventListener("change", () => checkItem(item))
-  )};
+  const toDoChecksInputs = [...document.querySelectorAll(".list-item .check-item")];
+};
 // ADD NEW ITEM
-export const addNewItem = (event, arr, items, container) => { event.preventDefault();
+export const addNewItem = (event, arr, items, container) => { 
+  event.preventDefault();
   const description = addNewInput.value;
   const index = arr.length + 1;
   const newItem = document.createElement("li");
@@ -97,8 +97,7 @@ export const addNewItem = (event, arr, items, container) => { event.preventDefau
   });
   const removeBtns = document.querySelectorAll(".remove-item");
   removeBtns.forEach((item) => item.addEventListener("click", () => removeItem(item, arr, container)));
-  const toDoChecksInputs = [...document.querySelectorAll(".list-item .check-item"), ];
-  toDoChecksInputs.forEach((item) => item.addEventListener("change", () => checkItem(item)));
+  const toDoChecksInputs = [...document.querySelectorAll(".list-item .check-item")];
   addNewInput.value = "";
 };
 // CLEAR ALL
@@ -115,7 +114,7 @@ export const clearAll = (container) => {
   localStorage.setItem("myToDos", JSON.stringify(newSorteredArr));
   setToDoArr(newSorteredArr);
   implementToDoItems(newSorteredArr);
-  const toDoDescriptionsInputs = [...document.querySelectorAll(".list-item .description-input"),];
+  const toDoDescriptionsInputs = [...document.querySelectorAll(".list-item .description-input") ];
   toDoDescriptionsInputs.forEach((item) => item.addEventListener("focusin", (event) => descriptionOnFocus(event, item)));
   toDoDescriptionsInputs.forEach((item) => item.addEventListener("focusout", (event) => descriptionOnFocus(event, item)));
   toDoDescriptionsInputs.forEach((item) => item.addEventListener("input", () => updateInput(item)));
@@ -128,8 +127,6 @@ export const clearAll = (container) => {
   });
 
   const removeBtns = document.querySelectorAll(".remove-item");
-  removeBtns.forEach((item) => item.addEventListener("click", () => removeItem(item, arr, container))
-  );
-  const toDoChecksInputs = [...document.querySelectorAll(".list-item .check-item"),];
-  toDoChecksInputs.forEach((item) => item.addEventListener("change", () => checkItem(item)));
+  removeBtns.forEach((item) => item.addEventListener("click", () => removeItem(item, arr, container)),);
+  const toDoChecksInputs = [...document.querySelectorAll(".list-item .check-item")];
 };
