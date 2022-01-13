@@ -50,8 +50,8 @@ export const removeItem = (item, arr, container) => {
   // const toDoChecksInputs = [...document.querySelectorAll(".list-item .check-item")];
 };
 // ADD NEW ITEM
-export const addNewItem = (event, arr, items, container) => { 
-event.preventDefault();
+export const addNewItem = (event, arr, items, container) => {
+  event.preventDefault();
   const description = addNewInput.value;
   const index = arr.length + 1;
   const newItem = document.createElement("li");
