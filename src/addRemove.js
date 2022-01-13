@@ -36,8 +36,8 @@ export const removeItem = (item, arr, container) => {
     ...document.querySelectorAll(".list-item .description-input"),
   ];
   toDoDescriptionsInputs.forEach((item) => item.addEventListener("focusin", (event) => descriptionOnFocus(event, item)));
-  toDoDescriptionsInputs.forEach((item) => item.addEventListener("focusout", (event) => descriptionOnFocus(event, item)),);
-  toDoDescriptionsInputs.forEach((item) => item.addEventListener("input", () => updateInput(item)),);
+  toDoDescriptionsInputs.forEach((item) => item.addEventListener("focusout", (event) => descriptionOnFocus(event, item)));
+  toDoDescriptionsInputs.forEach((item) => item.addEventListener("input", () => updateInput(item)));
   arr = [...document.querySelectorAll(".list-item")];
   arr.forEach((item) => {
     item.addEventListener("mouseover", (event) => onMouseOver(event, item));
@@ -46,13 +46,12 @@ export const removeItem = (item, arr, container) => {
     item.addEventListener("drop", (event) => onDragEnd(event, item, arr, listWrap));
   });
   const removeBtns = document.querySelectorAll(".remove-item");
-  removeBtns.forEach((item) => item.addEventListener("click", () => removeItem(item, arr, container)),);
-  const toDoChecksInputs = [...document.querySelectorAll(".list-item .check-item"),];
+  removeBtns.forEach((item) => item.addEventListener("click", () => removeItem(item, arr, container)));
+  const toDoChecksInputs = [...document.querySelectorAll(".list-item .check-item") ];
   toDoChecksInputs.forEach((item) => item.addEventListener("change", () => checkItem(item))
   )};
 // ADD NEW ITEM
-export const addNewItem = (event, arr, items, container) => { 
-  event.preventDefault();
+export const addNewItem = (event, arr, items, container) => { event.preventDefault();
   const description = addNewInput.value;
   const index = arr.length + 1;
   const newItem = document.createElement("li");
@@ -98,7 +97,7 @@ export const addNewItem = (event, arr, items, container) => {
   });
   const removeBtns = document.querySelectorAll(".remove-item");
   removeBtns.forEach((item) => item.addEventListener("click", () => removeItem(item, arr, container)));
-  const toDoChecksInputs = [...document.querySelectorAll(".list-item .check-item"),];
+  const toDoChecksInputs = [...document.querySelectorAll(".list-item .check-item"), ];
   toDoChecksInputs.forEach((item) => item.addEventListener("change", () => checkItem(item)));
   addNewInput.value = "";
 };
@@ -125,9 +124,7 @@ export const clearAll = (container) => {
     item.addEventListener("mouseover", (event) => onMouseOver(event, item));
     item.addEventListener("mouseout", (event) => onMouseOut(event, item));
     item.addEventListener("dragstart", (event) => onDragStart(event, item));
-    item.addEventListener("drop", (event) =>
-      onDragEnd(event, item, arr, listWrap)
-    );
+    item.addEventListener("drop", (event) => onDragEnd(event, item, arr, listWrap));
   });
 
   const removeBtns = document.querySelectorAll(".remove-item");
