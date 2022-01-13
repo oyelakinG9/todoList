@@ -42,7 +42,7 @@ export const implementToDoItems = (arr) => {
     </li>`;
   });
 };
- implementToDoItems(toDoArr);
+implementToDoItems(toDoArr);
 
 // FOCUS ITEMS
 const toDoDescriptionsInputs = [
