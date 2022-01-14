@@ -71,7 +71,7 @@ npx hint --telemetry=off .
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/oyelakinG9/todoList/issues/2).
 
 
 ## 📝 License
