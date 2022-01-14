@@ -6,7 +6,7 @@ const checkItem = (btn) => {
     btn.parentElement.parentElement.classList.add('completed-item');
     btn.parentElement.parentElement.style.backgroundColor = '#fff';
     newArr[indexOfArrElement].completed = true;
-  }else {
+  } else {
     btn.parentElement.parentElement.classList.remove('completed-item');
     btn.parentElement.parentElement.style.backgroundColor = '#fff';
     newArr[indexOfArrElement].completed = false;
