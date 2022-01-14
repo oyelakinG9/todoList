@@ -1,6 +1,8 @@
 /* eslint-disable import/no-cycle */
 import { implementToDoItems, setToDoArr } from './index.js';
-import { onMouseOver, onMouseOut, onDragStart, onDragEnd, } from './dragOverAndDrop.js';
+import { 
+  onMouseOver, onMouseOut, onDragStart, onDragEnd 
+} from './dragOverAndDrop.js';
 import checkItem from './checkItem.js';
 import descriptionOnFocus from './inputsFocus.js';
 
