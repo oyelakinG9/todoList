@@ -18,6 +18,9 @@ Additional description about the project and its features.
 
 [Live Demo Link](https://livedemo.com)
 
+## Getting Started:
+ Run: npm run started (To start the code in browser).
+
 ### Prerequisites: 
 - webpack setup
 - linters correction 
