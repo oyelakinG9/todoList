@@ -16,7 +16,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://oyelaking9.github.io/todoList/)
 
 ## Getting Started:
  Run: npm run started (To start the code in browser).
